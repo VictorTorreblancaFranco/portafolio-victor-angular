@@ -1,0 +1,18 @@
+/* styles.scss - Estilos globales */
+
+/* Fondo global */
+body {
+    background-color: #111111;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hacer que el contenido se ajuste bien */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Otros estilos globales que quieras aplicar */
