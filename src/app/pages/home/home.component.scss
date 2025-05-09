@@ -1,128 +1,93 @@
 /* Contenedor principal que ocupa toda la pantalla */
 .home-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     width: 100%;
     height: 100vh;
-    /* Asegura que el contenedor ocupe toda la altura de la ventana */
-    padding: 0px;
+    background-color: #111;
     overflow: hidden;
-    /* Elimina cualquier scroll dentro del contenedor */
+    position: relative;
 }
 
-/* Sección de introducción */
-.intro-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
+/* Imagen de fondo */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background: url('/images/fondo/fondoopcional.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(60%);
+    z-index: 0;
 }
 
-/* Contenedor de imagen y texto */
-.profile-container {
-    display: flex;
-    align-items: center;
-    /* Centra los elementos verticalmente */
-    justify-content: flex-end;
-    /* Alinea la imagen a la derecha */
-    gap: 40px;
-    /* Espaciado entre la imagen y el texto */
+/* Contenido sobre la imagen de fondo */
+.content {
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Estilo para la imagen de perfil */
-.profile-picture img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    /* Hacer la imagen circular */
-    object-fit: cover;
-    border: 5px solid #fff;
-    /* Borde blanco alrededor de la imagen */
+/* Títulos */
+h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: rgb(0, 140, 255);
+    letter-spacing: 1px;
 }
 
-/* Estilo del título */
-.intro-text h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-/* Estilo del párrafo */
-.intro-text p {
+/* Descripción */
+p {
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 300;
 }
 
-/* Estilo para el botón */
-.get-started-button {
-    margin-top: 30px;
-    background-color: #4CAF50;
-    /* Verde */
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Efecto al pasar el ratón sobre el botón */
-.get-started-button:hover {
-    background-color: #45a049;
-    /* Cambio de color al pasar el ratón */
-}
-
-/* Estilo para la sección de "He trabajado con" */
-.worked-with {
-    margin: 15px;
-    p {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        /* Asegura que el texto también sea visible */
-    }
-}
-
-/* Estilo para los logotipos en la sección "He trabajado con" */
-.logos {
+/* Estilo para los íconos de redes sociales */
+.social-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
-    /* Espaciado entre los logos */
-
-    img {
-        width: 80px;
-        /* Tamaño uniforme de los logos */
-        height: auto;
-        padding: 10px;
-        /* Añadir espacio alrededor del logotipo */
-        background-color: white;
-        /* Fondo blanco detrás del logo para mayor contraste */
-        border-radius: 10px;
-        /* Bordes redondeados */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        /* Sombra suave alrededor del logo */
-    }
+    margin-top: 30px;
 }
 
-/* Asegura que las imágenes dentro de contenedores se ajusten al 100% */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Iconos dentro de los enlaces (sin fondo ni círculos) */
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    /* Tamaño ajustado */
+    height: 40px;
+    /* Tamaño ajustado */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contenedor principal si se requiere */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    /* Ajuste del ancho máximo */
-    margin: 0 auto;
-    padding: 20px;
+/* Estilo para los iconos */
+.social-icons i {
+    font-size: 35px;
+    /* Tamaño ajustado para los iconos */
+    color: #ffffff;
+    /* Color blanco */
+}
+
+/* Efecto al pasar el ratón */
+.social-icons a:hover {
+    transform: scale(1.1);
+    /* Aumenta el tamaño al pasar el ratón */
+    opacity: 0.8;
+    /* Reduce la opacidad */
 }
