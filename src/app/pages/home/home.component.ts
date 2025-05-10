@@ -10,4 +10,10 @@ import { MatIconModule } from '@angular/material/icon';  // Importar MatIconModu
 })
 export class HomeComponent {
   title = 'Bienvenido a mi portafolio';
+    scrollToNext(): void {
+    window.scrollTo({
+      top: window.innerHeight, // Desplaza hasta la parte inferior de la pantalla
+      behavior: 'smooth' // Efecto de desplazamiento suave
+    });
+  }
 }
