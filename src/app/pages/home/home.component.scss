@@ -118,7 +118,7 @@ p {
     background-color: white;
     position: absolute;
     top: 50%;
-    left: 43%;
+    left: 44%;
     transform: translate(-50%, -50%);
     margin-top: -20px;
     animation: bounce 1.5s infinite;
@@ -146,4 +146,208 @@ p {
         opacity: 1;
         /* Vuelve a ser visible */
     }
+}
+
+/*Seccion acerca de mi*/
+/* Sección Acerca de mí */
+.about-section {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.about-container {
+    text-align: center;
+    color: #333;
+
+    img {
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+.about-container h3 {
+    color: rgba(105, 105, 105, 0.932);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Barra azul debajo del encabezado */
+.blue-bar {
+    width: 100px;
+    height: 6px;
+    background-color: #3c96dc;
+    /* Color azul */
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.about-content p {
+    font-size: 1.2rem;
+    max-width: 850px;
+    line-height: 1.6;
+}
+
+/* Estilo para los enlaces de las tecnologías */
+.tech-link {
+    color: #3c96dc;
+    /* Color azul */
+    text-decoration: none;
+    /* Quitar subrayado */
+    font-weight: bold;
+    font-weight: 400;
+}
+
+.tech-link:hover {
+    opacity: 0.7;
+    /* Hacerlo un poco más claro al pasar el ratón */
+}
+
+
+
+
+
+
+/* Estilo para el Footer */
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Alineación horizontal */
+    gap: 100px;
+}
+
+/* Enlaces rápidos */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-size: 1.2rem;
+    color: #ffffff80;
+    /* Opacidad ajustada */
+    margin-bottom: 10px;
+    max-width: 0px;
+    opacity: 0.8;
+    /* Aumentar la opacidad (más claro) */
+    transition: opacity 0.3s ease;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3c96dc;
+    text-decoration: underline;
+}
+
+/* Sección de redes sociales */
+.footer-social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+}
+
+.footer-social-icons h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff80;
+    /* Opacidad ajustada */
+    opacity: 0.8;
+    /* Más opaco */
+}
+
+.footer-social-icons .social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-icons .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons .social-icons a:hover {
+    color: #3c96dc;
+}
+
+/* Información de contacto */
+.footer-contact {
+    text-align: left;
+    flex: 1;
+}
+
+.footer-contact h4 {
+    font-size: 1.2rem;
+    color: #ffffff80;
+    /* Opacidad ajustada */
+    margin-bottom: 10px;
+    opacity: 0.8;
+    /* Más opaco */
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Logo */
+.footer-logo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-logo .logo {
+    width: 150px;
+    height: auto;
 }
