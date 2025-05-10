@@ -17,9 +17,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/images/fondo/fondoopcional.jpg') no-repeat center center;
+    background: url('/images/fondo/fondoopcional1.png') no-repeat center center;
     background-size: cover;
-    filter: brightness(60%);
     z-index: 0;
 }
 
@@ -34,9 +33,9 @@
 /* Títulos */
 h2 {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 3000;
     margin-bottom: 10px;
-    color: rgb(0, 140, 255);
+    color: #3c96dc;
     letter-spacing: 1px;
 }
 
@@ -79,7 +78,7 @@ p {
 /* Estilo para los iconos */
 .social-icons i {
     font-size: 35px;
-    /* Tamaño ajustado para los iconos */
+    /* Ajuste al tamaño de los iconos */
     color: #ffffff;
     /* Color blanco */
 }
@@ -90,4 +89,61 @@ p {
     /* Aumenta el tamaño al pasar el ratón */
     opacity: 0.8;
     /* Reduce la opacidad */
+}
+
+/* Logo debajo de los iconos */
+.logo {
+    width: 250px;
+    /* Ajusta el tamaño del logo */
+    margin-top: 0px;
+    /* Espacio entre los iconos y el logo */
+}
+
+/* Contenedor del icono del mouse */
+.mouse-icon {
+    display: block;
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin: -50px auto;
+    position: relative;
+}
+
+/* La rueda del mouse */
+.mouse-wheel {
+    width: 4px;
+    height: 13px;
+    border-radius: 25%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    margin-top: -20px;
+    animation: bounce 1.5s infinite;
+    /* Cambiar a "infinite" para hacerlo en bucle */
+}
+
+/* Animación para el efecto del movimiento de la rueda del mouse */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+        /* Totalmente visible al inicio */
+    }
+
+    50% {
+        transform: translateY(15px);
+        /* Movimiento hacia abajo */
+        opacity: 0;
+        /* Desaparece mientras baja */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Vuelve a la posición inicial */
+        opacity: 1;
+        /* Vuelve a ser visible */
+    }
 }
