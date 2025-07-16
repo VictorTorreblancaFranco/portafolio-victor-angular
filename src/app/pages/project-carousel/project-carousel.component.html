@@ -1,1 +1,51 @@
-<p>project-carousel works!</p>
+<div class="project-carousel">
+    <!-- Información del proyecto activo -->
+    <div class="active-project">
+        <h3>{{ activeProject.title }}</h3>
+        <p>{{ activeProject.description }}</p>
+
+        <div class="project-actions">
+            <a [href]="activeProject.link" target="_blank" class="btn demo">
+                <i class="bi bi-eye-fill"></i> Ver Demo
+            </a>
+            <a [href]="activeProject.github" target="_blank" class="btn github">
+                <i class="bi bi-github"></i> Código Fuente
+            </a>
+        </div>
+    </div>
+
+    <!-- Carrusel 3D -->
+    <div #carousel class="carousel">
+        @for (project of projects; track project.title; let i = $index) {
+        <div class="item" [class.active]="i === currentIndex" (click)="goToProject(i)"
+            [style.--offset]="i - currentIndex">
+            <div class="card">
+                <div class="image" [style.backgroundImage]="'url(' + project.image + ')'"></div>
+                <div class="content">
+                    <h4>{{ project.title }}</h4>
+                    <div class="tech-tags">
+                        @for (tech of project.technologies; track tech) {
+                        <span class="tag">{{ tech }}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Controles -->
+    <button class="control prev" (click)="prevProject()">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="control next" (click)="nextProject()">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <!-- Indicadores -->
+    <div class="indicators">
+        @for (project of projects; track project.title; let i = $index) {
+        <button [class.active]="i === currentIndex" (click)="goToProject(i)"></button>
+        }
+    </div>
+</div>
