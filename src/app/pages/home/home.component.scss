@@ -236,3 +236,40 @@ app-project-carousel {
         margin-top: auto;
     }
 }
+
+
+
+
+
+/* Sección de Habilidades */
+.skills-main-section {
+    background-color: #121212; // Usa el mismo color que en el componente
+    padding: 0; // Elimina el padding que estaba causando las franjas
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(60, 150, 220, 0.1) 0%, transparent 70%);
+        z-index: 0;
+    }
+
+    .skills-container {
+        padding: 4rem 0; // Este padding ahora lo controla el componente interno
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+    }
+}

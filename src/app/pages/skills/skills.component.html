@@ -15,7 +15,7 @@
                 </div>
                 <div class="skills-list">
                     @for (skill of frontendSkills; track skill.name) {
-                    <div class="skill-item">
+                    <div class="skill-item" (click)="openModal(skill)">
                         <span class="skill-name">{{skill.name}}</span>
                         <div class="skill-level">
                             <div class="level-bar" [style.width.%]="skill.level"></div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="skills-list">
                     @for (skill of backendSkills; track skill.name) {
-                    <div class="skill-item">
+                    <div class="skill-item" (click)="openModal(skill)">
                         <span class="skill-name">{{skill.name}}</span>
                         <div class="skill-level">
                             <div class="level-bar" [style.width.%]="skill.level"></div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="skills-list">
                     @for (skill of databaseSkills; track skill.name) {
-                    <div class="skill-item">
+                    <div class="skill-item" (click)="openModal(skill)">
                         <span class="skill-name">{{skill.name}}</span>
                         <div class="skill-level">
                             <div class="level-bar" [style.width.%]="skill.level"></div>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="skills-list">
                     @for (skill of devopsSkills; track skill.name) {
-                    <div class="skill-item">
+                    <div class="skill-item" (click)="openModal(skill)">
                         <span class="skill-name">{{skill.name}}</span>
                         <div class="skill-level">
                             <div class="level-bar" [style.width.%]="skill.level"></div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="skills-list">
                     @for (skill of toolSkills; track skill.name) {
-                    <div class="skill-item">
+                    <div class="skill-item" (click)="openModal(skill)">
                         <span class="skill-name">{{skill.name}}</span>
                         <div class="skill-level">
                             <div class="level-bar" [style.width.%]="skill.level"></div>
@@ -113,4 +113,59 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    @if (showModal) {
+    <div class="modal-overlay" (click)="closeModal()">
+        <div class="modal-container" (click)="$event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i [class]="getSkillIcon(selectedSkill.name)"></i>
+                </div>
+                <h3>{{selectedSkill.name}}</h3>
+                <button class="close-btn" (click)="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="skill-progress">
+                    <div class="progress-container">
+                        <div class="progress-bar" [style.width.%]="selectedSkill.level"></div>
+                    </div>
+                    <span class="progress-value">{{selectedSkill.level}}%</span>
+                </div>
+
+                <div class="skill-level-info">
+                    @if (selectedSkill.level >= 80) {
+                    <span class="expert">Nivel: Experto</span>
+                    } @else if (selectedSkill.level >= 60) {
+                    <span class="advanced">Nivel: Avanzado</span>
+                    } @else if (selectedSkill.level >= 40) {
+                    <span class="intermediate">Nivel: Intermedio</span>
+                    } @else {
+                    <span class="basic">Nivel: Básico</span>
+                    }
+                </div>
+
+                <div class="skill-description">
+                    <p>{{getSkillDescription(selectedSkill.name)}}</p>
+                </div>
+
+                <div class="skill-experience">
+                    <h4>Experiencia:</h4>
+                    <ul>
+                        @for (exp of getSkillExperience(selectedSkill.name); track exp) {
+                        <li>{{exp}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    }
 </section>

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../../layout/footer/footer.component';
-import { ProjectCarouselComponent } from '../project-carousel/project-carousel.component'; // Importa el componente
+import { ProjectCarouselComponent } from '../project-carousel/project-carousel.component';
+import { SkillsComponent } from '../skills/skills.component'; // Nueva importación
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { ProjectCarouselComponent } from '../project-carousel/project-carousel.c
     MatIconModule,
     FooterComponent,
     CommonModule,
-    ProjectCarouselComponent // Añade el componente aquí
+    ProjectCarouselComponent,
+    SkillsComponent // Agregado aquí
   ]
 })
 export class HomeComponent {
