@@ -1,8 +1,12 @@
 /* home.component.scss - Estilos específicos del componente Home */
 
 .home-container {
-    @extend .full-height;
-    @extend .flex-center;
+    height: 100vh;
+    /* Equivalente a .full-height */
+    display: flex;
+    /* Equivalente a .flex-center */
+    align-items: center;
+    justify-content: center;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -33,7 +37,7 @@
 
 /* Sección Acerca de mí */
 .about-section {
-    background-color: white;
+    background-color: antiquewhite;
     padding: 50px 20px;
     color: var(--dark-text);
 
