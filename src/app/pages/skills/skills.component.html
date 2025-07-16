@@ -1,1 +1,116 @@
-<p>skills works!</p>
+<section class="skills-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Mis Habilidades</h2>
+            <div class="blue-bar"></div>
+            <p>Tecnologías y herramientas que utilizo para crear soluciones digitales</p>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Frontend -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend</h3>
+                </div>
+                <div class="skills-list">
+                    @for (skill of frontendSkills; track skill.name) {
+                    <div class="skill-item">
+                        <span class="skill-name">{{skill.name}}</span>
+                        <div class="skill-level">
+                            <div class="level-bar" [style.width.%]="skill.level"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Backend & APIs -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend & APIs</h3>
+                </div>
+                <div class="skills-list">
+                    @for (skill of backendSkills; track skill.name) {
+                    <div class="skill-item">
+                        <span class="skill-name">{{skill.name}}</span>
+                        <div class="skill-level">
+                            <div class="level-bar" [style.width.%]="skill.level"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-database"></i>
+                    <h3>Bases de Datos</h3>
+                </div>
+                <div class="skills-list">
+                    @for (skill of databaseSkills; track skill.name) {
+                    <div class="skill-item">
+                        <span class="skill-name">{{skill.name}}</span>
+                        <div class="skill-level">
+                            <div class="level-bar" [style.width.%]="skill.level"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud & DevOps</h3>
+                </div>
+                <div class="skills-list">
+                    @for (skill of devopsSkills; track skill.name) {
+                    <div class="skill-item">
+                        <span class="skill-name">{{skill.name}}</span>
+                        <div class="skill-level">
+                            <div class="level-bar" [style.width.%]="skill.level"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-tools"></i>
+                    <h3>Herramientas</h3>
+                </div>
+                <div class="skills-list">
+                    @for (skill of toolSkills; track skill.name) {
+                    <div class="skill-item">
+                        <span class="skill-name">{{skill.name}}</span>
+                        <div class="skill-level">
+                            <div class="level-bar" [style.width.%]="skill.level"></div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Habilidades Blandas</h3>
+                </div>
+                <div class="soft-skills-list">
+                    @for (skill of softSkills; track skill) {
+                    <div class="soft-skill-item">
+                        <span>{{skill}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
