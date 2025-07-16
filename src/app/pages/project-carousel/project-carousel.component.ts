@@ -14,7 +14,7 @@ export class ProjectCarouselComponent {
       title: 'Portafolio Digital',
       description: 'Sitio web personal desarrollado con Angular, TypeScript y SCSS, diseñado para mostrar mis habilidades y proyectos de manera elegante y profesional.',
       technologies: ['Angular', 'TypeScript', 'SCSS'],
-      image: 'assets/images/projects/portfolio.jpg',
+      image: 'images/Proyectos/portafolio.png',
       link: 'https://mi-portfolio.com',
       figma: 'https://figma.com/mi-portfolio',
       github: 'https://github.com/mi-usuario/portfolio'
