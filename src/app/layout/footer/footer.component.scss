@@ -1,9 +1,11 @@
 .footer {
     background-color: var(--footer-bg);
     color: white;
-    padding: 40px 0;
+    padding: 20px 0;
+    /* Reducir el padding para hacer el footer más bajo */
     width: 100%;
-    min-height: 30vh;
+    min-height: 20vh;
+    /* Ajustar la altura mínima del footer */
 
     .footer-container {
         max-width: 100%;
@@ -12,11 +14,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 100px;
+        gap: 50px;
+        /* Reducir el espacio entre las secciones */
+    }
+
+    .footer-links,
+    .footer-social-icons,
+    .footer-contact {
+        flex: 1;
     }
 
     .footer-links {
-        flex: 1;
         text-align: left;
 
         ul {
@@ -40,10 +48,13 @@
     }
 
     .footer-social-icons {
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
 
         .social-icons {
+            display: flex;
             gap: 20px;
 
             i {
@@ -53,7 +64,6 @@
     }
 
     .footer-contact {
-        flex: 1;
         text-align: left;
 
         p {
@@ -62,12 +72,14 @@
         }
     }
 
+    /* Para la imagen del logo */
     .footer-logo {
-        margin-top: 30px;
-        width: 100%;
+        margin-top: 0;
+        width: auto;
 
         .logo {
-            width: 150px;
+            width: 120px;
+            /* Reducir el tamaño del logo */
         }
     }
 }
