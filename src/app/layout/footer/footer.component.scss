@@ -2,43 +2,62 @@
     background-color: var(--footer-bg);
     color: white;
     padding: 40px 20px;
-    width: 90%;
-    height: 15vh;
-    /* Reducir altura del footer */
+    width: 100%;
 
     .footer-container {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
-        /* Alinea los elementos de arriba hacia abajo */
-        max-width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
         gap: 50px;
-        /* Espaciado entre las secciones */
+
+        @media (max-width: 992px) {
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
     }
 
-    /* Asegura que los elementos estén centrados en la pantalla */
     .footer-links,
     .footer-social-icons,
-    .footer-contact {
+    .footer-contact,
+    .footer-logo {
         flex: 1;
-        text-align: center;
-        /* Centrar el contenido de cada sección */
+        min-width: 200px;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            width: 100%;
+        }
     }
 
-    /* Centrar los títulos */
     h4 {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 10px;
         text-align: center;
-        /* Centrado del título */
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 
     .footer-links ul {
         list-style: none;
         padding: 0;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .footer-links li {
@@ -60,6 +79,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
 
             i {
                 font-size: 24px;
@@ -67,21 +87,58 @@
         }
     }
 
-    /* Estilos para la sección de contacto */
     .footer-contact {
         p {
             font-size: 1rem;
             color: #ccc;
+
+            @media (max-width: 768px) {
+                text-align: center;
+            }
         }
     }
 
-    /* Logo al final */
     .footer-logo {
         margin-top: 20px;
         text-align: center;
 
         .logo {
             width: 120px;
+            height: auto;
+
+            @media (max-width: 768px) {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            margin-top: 30px;
+            order: 4; // Lo movemos al final en móviles
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 30px 15px;
+
+        .footer-container {
+            gap: 25px;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        .footer-links a,
+        .footer-contact p {
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons .social-icons i {
+            font-size: 22px;
+        }
+
+        .footer-logo .logo {
+            width: 100px;
         }
     }
 }
