@@ -19,6 +19,24 @@ body {
     font-family: 'Roboto', 'Helvetica Neue', sans-serif;
     background-color: var(--dark-bg);
     color: var(--light-text);
+
+    /* Habilitar scroll pero ocultar el scrollbar */
+    overflow: auto;
+    /* Esto habilita el scroll, pero el scrollbar será invisible */
+}
+
+/* Para ocultar los scrollbars de los navegadores basados en Webkit (Chrome, Safari, Edge) */
+body::-webkit-scrollbar {
+    width: 0px;
+    /* Oculta el scrollbar horizontal */
+    height: 0px;
+    /* Oculta el scrollbar vertical */
+}
+
+/* Para Firefox */
+html {
+    scrollbar-width: none;
+    /* Firefox - Oculta el scrollbar */
 }
 
 /* Tipografía */

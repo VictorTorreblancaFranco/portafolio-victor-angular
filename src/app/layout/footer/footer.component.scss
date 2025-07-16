@@ -1,60 +1,64 @@
 .footer {
     background-color: var(--footer-bg);
     color: white;
-    padding: 20px 0;
-    /* Reducir el padding para hacer el footer más bajo */
-    width: 100%;
-    min-height: 20vh;
-    /* Ajustar la altura mínima del footer */
+    padding: 40px 20px;
+    width: 90%;
+    height: 15vh;
+    /* Reducir altura del footer */
 
     .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Alinea los elementos de arriba hacia abajo */
         max-width: 100%;
         margin: 0 auto;
         padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         gap: 50px;
-        /* Reducir el espacio entre las secciones */
+        /* Espaciado entre las secciones */
     }
 
+    /* Asegura que los elementos estén centrados en la pantalla */
     .footer-links,
     .footer-social-icons,
     .footer-contact {
         flex: 1;
+        text-align: center;
+        /* Centrar el contenido de cada sección */
     }
 
-    .footer-links {
-        text-align: left;
+    /* Centrar los títulos */
+    h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        /* Centrado del título */
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
 
-        li {
-            margin: 5px 0;
-        }
+    .footer-links li {
+        margin: 5px 0;
+    }
 
-        a {
-            color: white;
-            font-size: 1rem;
+    .footer-links a {
+        color: white;
+        font-size: 1rem;
 
-            &:hover {
-                color: var(--primary-color);
-                text-decoration: underline;
-            }
+        &:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
         }
     }
 
     .footer-social-icons {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-
         .social-icons {
             display: flex;
+            justify-content: center;
             gap: 20px;
 
             i {
@@ -63,23 +67,21 @@
         }
     }
 
+    /* Estilos para la sección de contacto */
     .footer-contact {
-        text-align: left;
-
         p {
             font-size: 1rem;
             color: #ccc;
         }
     }
 
-    /* Para la imagen del logo */
+    /* Logo al final */
     .footer-logo {
-        margin-top: 0;
-        width: auto;
+        margin-top: 20px;
+        text-align: center;
 
         .logo {
             width: 120px;
-            /* Reducir el tamaño del logo */
         }
     }
 }
