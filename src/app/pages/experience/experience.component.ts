@@ -3,12 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-experience',
   imports: [],
-  template: `
-    <p>
-      experience works!
-    </p>
-  `,
-  styles: ``
+  templateUrl: './experience.component.html',
+  styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
 

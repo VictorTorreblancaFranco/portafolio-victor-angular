@@ -3,12 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-skills',
   imports: [],
-  template: `
-    <p>
-      skills works!
-    </p>
-  `,
-  styles: ``
+  templateUrl: './skills.component.html',
+  styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
 

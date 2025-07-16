@@ -3,12 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-project-carousel',
   imports: [],
-  template: `
-    <p>
-      project-carousel works!
-    </p>
-  `,
-  styles: ``
+  templateUrl: './project-carousel.component.html',
+  styleUrl: './project-carousel.component.scss'
 })
 export class ProjectCarouselComponent {
 
