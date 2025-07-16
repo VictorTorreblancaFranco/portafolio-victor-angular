@@ -2,9 +2,7 @@
 
 .home-container {
     height: 100vh;
-    /* Equivalente a .full-height */
     display: flex;
-    /* Equivalente a .flex-center */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -28,6 +26,21 @@
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .logo {
@@ -42,10 +55,21 @@
     color: var(--dark-text);
 
     img {
-        width: 20%;
-        height: 20%;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         margin-bottom: 20px;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
     }
 }
 
@@ -59,77 +83,29 @@
     margin-right: auto;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--footer-bg);
-    color: white;
-    padding: 40px 0;
-    width: 100%;
-    min-height: 30vh;
+.blue-bar {
+    width: 100px;
+    height: 4px;
+    background-color: #3c96dc;
+    margin: 0 auto 30px;
+}
 
-    .footer-container {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 100px;
-    }
-
-    .footer-links {
-        flex: 1;
-        text-align: left;
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 5px 0;
-        }
-
-        a {
-            color: white;
-            font-size: 1rem;
-
-            &:hover {
-                color: var(--primary-color);
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .footer-social-icons {
-        flex: 1;
-        gap: 10px;
-
-        .social-icons {
-            gap: 20px;
-
-            i {
-                font-size: 24px;
-            }
-        }
-    }
-
-    .footer-contact {
-        flex: 1;
-        text-align: left;
-
-        p {
-            font-size: 1rem;
-            color: #ccc;
-        }
-    }
-
-    .footer-logo {
-        margin-top: 30px;
-        width: 100%;
-
-        .logo {
-            width: 150px;
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    
+    a {
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: #3c96dc;
+            transform: translateY(-3px);
         }
     }
 }
@@ -175,11 +151,9 @@
     }
 }
 
-
-
 /* Sección de Proyectos */
 .projects-section {
-    background-color: #111; // Fondo oscuro para contrastar
+    background-color: #111;
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
@@ -194,57 +168,26 @@
         background: radial-gradient(circle at center, rgba(60, 150, 220, 0.1) 0%, transparent 70%);
         z-index: 0;
     }
-}
-
-
-
-
-.projects-container {
-    margin-top: 0%;
-    position: relative;
-    z-index: 1;
-    height: 85vh;
-
-    h3 {
+    
+    h2 {
         color: white;
         font-size: 2.5rem;
         margin-bottom: 15px;
     }
 }
 
-/* Ajustes para el carrusel dentro del home */
-app-project-carousel {
-    display: block;
-    margin-top: -1%;
-
-    .carousel-container {
-        height: 60vh; // Ajusta según necesidad
-    }
-
-    .project-card {
-        background: rgba(30, 30, 30, 0.8);
-        border: 1px solid rgba(60, 150, 220, 0.3);
-
-        &:hover {
-            background: rgba(40, 40, 40, 0.9);
-            border-color: rgba(60, 150, 220, 0.6);
-        }
-    }
-
-    .view-button {
-        background: var(--primary-color);
-        margin-top: auto;
-    }
+.projects-container {
+    margin-top: 0%;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    min-height: 85vh;
 }
-
-
-
-
 
 /* Sección de Habilidades */
 .skills-main-section {
-    background-color: #121212; // Usa el mismo color que en el componente
-    padding: 0; // Elimina el padding que estaba causando las franjas
+    background-color: #121212;
+    padding: 0;
     position: relative;
     overflow: hidden;
 
@@ -260,7 +203,7 @@ app-project-carousel {
     }
 
     .skills-container {
-        padding: 4rem 0; // Este padding ahora lo controla el componente interno
+        padding: 4rem 0;
         position: relative;
         z-index: 1;
         max-width: 1200px;
@@ -274,16 +217,10 @@ app-project-carousel {
     }
 }
 
-
-
-
-
-
 /* Sección de Contacto */
 .contact-main-section {
     background-color: #f9f9f9;
     padding: 0;
-    /* El padding ahora lo controla el componente interno */
     position: relative;
     overflow: hidden;
 
@@ -296,5 +233,159 @@ app-project-carousel {
         height: 100%;
         background: radial-gradient(circle at center, rgba(60, 150, 220, 0.1) 0%, transparent 70%);
         z-index: 0;
+    }
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablets pequeñas (ej. iPad Mini) */
+@media (max-width: 768px) {
+    .content {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .about-section {
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .projects-section {
+        padding: 60px 15px;
+        
+        h2 {
+            font-size: 2rem;
+        }
+    }
+    
+    .social-icons {
+        gap: 12px;
+        
+        a {
+            font-size: 1.3rem;
+        }
+    }
+    
+    .logo {
+        width: 200px;
+    }
+}
+
+/* Tablets grandes (ej. iPad Pro) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content {
+        max-width: 500px;
+    }
+    
+    .about-section {
+        img {
+            width: 180px;
+            height: 180px;
+        }
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .content {
+        padding: 15px;
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+        }
+        
+        p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+    .about-section {
+        padding: 30px 15px;
+        
+        img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            font-size: 0.9rem;
+        }
+    }
+    
+    .projects-section {
+        padding: 40px 10px;
+        
+        h2 {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .social-icons {
+        gap: 10px;
+        
+        a {
+            font-size: 1.2rem;
+        }
+    }
+    
+    .logo {
+        width: 180px;
+    }
+    
+    .blue-bar {
+        width: 80px;
+        height: 3px;
+        margin-bottom: 20px;
+    }
+    
+    .mouse-icon {
+        width: 25px;
+        height: 40px;
+        margin: -40px auto;
+    }
+}
+
+/* Móviles grandes (ej. iPhone Plus) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .content {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    .about-section {
+        img {
+            width: 160px;
+            height: 160px;
+        }
     }
 }
