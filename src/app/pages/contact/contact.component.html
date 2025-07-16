@@ -1,1 +1,116 @@
-<p>contact works!</p>
+<section class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contáctame</h2>
+        <p class="section-subtitle">¿Tienes un proyecto en mente o quieres trabajar juntos? ¡Hablemos!</p>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="icon fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>contacto&#64;midominio.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="icon fas fa-phone"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+1 234 567 890</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="icon fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Ciudad, País</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo *</label>
+                    <input type="text" id="name" formControlName="name" placeholder="Tu nombre">
+                    <div *ngIf="submitted && f['name'].errors" class="error-message">
+                        <span *ngIf="f['name'].errors['required']">El nombre es requerido</span>
+                        <span *ngIf="f['name'].errors['minlength']">El nombre debe tener al menos 2 caracteres</span>
+                        <span *ngIf="f['name'].errors['maxlength']">El nombre no puede exceder los 50 caracteres</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" formControlName="email" placeholder="tu@email.com">
+                    <div *ngIf="submitted && f['email'].errors" class="error-message">
+                        <span *ngIf="f['email'].errors['required']">El email es requerido</span>
+                        <span *ngIf="f['email'].errors['email']">Por favor ingresa un email válido</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono (opcional)</label>
+                    <input type="tel" id="phone" formControlName="phone" placeholder="+1234567890">
+                    <div *ngIf="submitted && f['phone'].errors" class="error-message">
+                        <span *ngIf="f['phone'].errors['pattern']">Por favor ingresa un número de teléfono válido</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Asunto *</label>
+                    <input type="text" id="subject" formControlName="subject" placeholder="¿Sobre qué quieres hablar?">
+                    <div *ngIf="submitted && f['subject'].errors" class="error-message">
+                        <span *ngIf="f['subject'].errors['required']">El asunto es requerido</span>
+                        <span *ngIf="f['subject'].errors['minlength']">El asunto debe tener al menos 5 caracteres</span>
+                        <span *ngIf="f['subject'].errors['maxlength']">El asunto no puede exceder los 100
+                            caracteres</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje *</label>
+                    <textarea id="message" formControlName="message" rows="5"
+                        placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                    <div *ngIf="submitted && f['message'].errors" class="error-message">
+                        <span *ngIf="f['message'].errors['required']">El mensaje es requerido</span>
+                        <span *ngIf="f['message'].errors['minlength']">El mensaje debe tener al menos 10
+                            caracteres</span>
+                        <span *ngIf="f['message'].errors['maxlength']">El mensaje no puede exceder los 1000
+                            caracteres</span>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacyPolicy" formControlName="privacyPolicy">
+                    <label for="privacyPolicy">Acepto la <a href="#" class="privacy-link">política de privacidad</a>
+                        *</label>
+                    <div *ngIf="submitted && f['privacyPolicy'].errors" class="error-message">
+                        <span *ngIf="f['privacyPolicy'].errors['required']">Debes aceptar la política de
+                            privacidad</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn" [disabled]="isLoading">
+                        <span *ngIf="!isLoading">Enviar mensaje</span>
+                        <span *ngIf="isLoading">Enviando...</span>
+                    </button>
+                    <button type="button" class="reset-btn" (click)="resetForm()">Limpiar formulario</button>
+                </div>
+
+                <div *ngIf="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i> {{ successMessage }}
+                </div>
+
+                <div *ngIf="errorMessage" class="error-message">
+                    <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
