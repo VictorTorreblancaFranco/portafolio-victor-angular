@@ -9,7 +9,8 @@
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    height: 109vh;
+    height: auto;
+    min-height: 100vh;
 
     .container {
         max-width: 1200px;
@@ -49,11 +50,6 @@
     grid-template-columns: 1fr 1.5fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
 }
 
 .contact-info {
@@ -130,11 +126,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         margin-bottom: 0.75rem;
-
-        @media (max-width: 480px) {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
     }
 
     .form-group {
@@ -217,6 +208,119 @@
         &:disabled {
             background: #94a3b8;
             cursor: not-allowed;
+        }
+    }
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablets pequeñas (ej. iPad Mini) */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 1rem;
+        height: auto;
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .contact-info {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .contact-form {
+        margin-left: 0;
+    }
+}
+
+/* Tablets grandes (ej. iPad Pro) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .contact-content {
+        gap: 1.25rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 1.5rem 0.75rem;
+
+        .section-title {
+            font-size: 1.6rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    .contact-info {
+        padding: 1rem;
+
+        .info-item {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+
+            .icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .social-links {
+            justify-content: center;
+        }
+    }
+
+    .contact-form {
+        padding: 1rem;
+
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .submit-btn {
+            padding: 0.75rem;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* Móviles grandes (ej. iPhone Plus) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .contact-section {
+        .section-title {
+            font-size: 1.7rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+        }
+    }
+
+    .contact-info {
+        .info-item {
+            flex-direction: row;
         }
     }
 }
