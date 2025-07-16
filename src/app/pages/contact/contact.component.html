@@ -32,7 +32,8 @@
                         <label for="name">Nombre completo *</label>
                         <input type="text" id="name" formControlName="name" placeholder="Tu nombre">
                         <div *ngIf="submitted && f['name'].errors" class="error-message">
-                            <span *ngIf="f['name'].errors['required']">El nombre es requerido</span>
+                            <span *ngIf="f['name'].hasError('required')">El nombre es requerido</span>
+                            <span *ngIf="f['name'].hasError('minlength')">Debe tener al menos 2 caracteres</span>
                         </div>
                     </div>
 
@@ -40,8 +41,8 @@
                         <label for="email">Correo electrónico *</label>
                         <input type="email" id="email" formControlName="email" placeholder="tu@email.com">
                         <div *ngIf="submitted && f['email'].errors" class="error-message">
-                            <span *ngIf="f['email'].errors['required']">El email es requerido</span>
-                            <span *ngIf="f['email'].errors['email']">Email inválido</span>
+                            <span *ngIf="f['email'].hasError('required')">El email es requerido</span>
+                            <span *ngIf="f['email'].hasError('email')">Email inválido</span>
                         </div>
                     </div>
                 </div>
@@ -50,7 +51,8 @@
                     <label for="subject">Asunto *</label>
                     <input type="text" id="subject" formControlName="subject" placeholder="¿Sobre qué quieres hablar?">
                     <div *ngIf="submitted && f['subject'].errors" class="error-message">
-                        <span *ngIf="f['subject'].errors['required']">El asunto es requerido</span>
+                        <span *ngIf="f['subject'].hasError('required')">El asunto es requerido</span>
+                        <span *ngIf="f['subject'].hasError('minlength')">Debe tener al menos 5 caracteres</span>
                     </div>
                 </div>
 
@@ -59,7 +61,8 @@
                     <textarea id="message" formControlName="message" rows="4"
                         placeholder="Cuéntame sobre tu proyecto..."></textarea>
                     <div *ngIf="submitted && f['message'].errors" class="error-message">
-                        <span *ngIf="f['message'].errors['required']">El mensaje es requerido</span>
+                        <span *ngIf="f['message'].hasError('required')">El mensaje es requerido</span>
+                        <span *ngIf="f['message'].hasError('minlength')">Debe tener al menos 10 caracteres</span>
                     </div>
                 </div>
 
@@ -77,14 +80,6 @@
                         <span *ngIf="!isLoading">Enviar mensaje</span>
                         <span *ngIf="isLoading">Enviando...</span>
                     </button>
-                </div>
-
-                <div *ngIf="successMessage" class="success-message">
-                    <i class="fas fa-check-circle"></i> {{ successMessage }}
-                </div>
-
-                <div *ngIf="errorMessage" class="error-message">
-                    <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
                 </div>
             </form>
         </div>
