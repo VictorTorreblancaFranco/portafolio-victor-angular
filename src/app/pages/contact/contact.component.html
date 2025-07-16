@@ -1,19 +1,20 @@
 <section class="contact-section">
     <div class="container">
         <h2 class="section-title">Contáctame</h2>
+        <div class="blue-bar"></div>
         <p class="section-subtitle">¿Tienes un proyecto en mente o quieres trabajar juntos? ¡Hablemos!</p>
 
         <div class="contact-content">
             <div class="contact-info">
                 <div class="info-item">
-                    <i class="icon fas fa-envelope"></i>
+                    <i class="icon fas fa-envelope fa-lg"></i>
                     <div>
                         <h3>Email</h3>
                         <p>contacto&#64;midominio.com</p>
                     </div>
                 </div>
                 <div class="info-item">
-                    <i class="icon fas fa-phone"></i>
+                    <i class="icon fas fa-phone fa-lg"></i>
                     <div>
                         <h3>Teléfono</h3>
                         <p>+1 234 567 890</p>
@@ -28,59 +29,47 @@
 
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Nombre completo *</label>
-                        <input type="text" id="name" formControlName="name" placeholder="Tu nombre">
+                    <div class="form-group name-input">
+                        <input type="text" id="name" formControlName="name" placeholder="Nombre completo *">
                         <div *ngIf="submitted && f['name'].errors" class="error-message">
                             <span *ngIf="f['name'].hasError('required')">El nombre es requerido</span>
-                            <span *ngIf="f['name'].hasError('minlength')">Debe tener al menos 2 caracteres</span>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Correo electrónico *</label>
-                        <input type="email" id="email" formControlName="email" placeholder="tu@email.com">
+                    <div class="form-group email-input">
+                        <input type="email" id="email" formControlName="email" placeholder="Correo electrónico *">
                         <div *ngIf="submitted && f['email'].errors" class="error-message">
                             <span *ngIf="f['email'].hasError('required')">El email es requerido</span>
-                            <span *ngIf="f['email'].hasError('email')">Email inválido</span>
+                            <span *ngIf="f['email'].hasError('email')">Email no válido</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Asunto *</label>
-                    <input type="text" id="subject" formControlName="subject" placeholder="¿Sobre qué quieres hablar?">
+                    <input type="text" id="subject" formControlName="subject" placeholder="Asunto *">
                     <div *ngIf="submitted && f['subject'].errors" class="error-message">
                         <span *ngIf="f['subject'].hasError('required')">El asunto es requerido</span>
-                        <span *ngIf="f['subject'].hasError('minlength')">Debe tener al menos 5 caracteres</span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mensaje *</label>
-                    <textarea id="message" formControlName="message" rows="4"
-                        placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                    <textarea id="message" formControlName="message" rows="4" placeholder="Mensaje *"></textarea>
                     <div *ngIf="submitted && f['message'].errors" class="error-message">
                         <span *ngIf="f['message'].hasError('required')">El mensaje es requerido</span>
-                        <span *ngIf="f['message'].hasError('minlength')">Debe tener al menos 10 caracteres</span>
                     </div>
                 </div>
 
                 <div class="form-group checkbox-group">
                     <input type="checkbox" id="privacyPolicy" formControlName="privacyPolicy">
-                    <label for="privacyPolicy">Acepto la <a href="#" class="privacy-link">política de privacidad</a>
-                        *</label>
+                    <label for="privacyPolicy">Acepto la política de privacidad *</label>
                     <div *ngIf="submitted && f['privacyPolicy'].errors" class="error-message">
                         <span>Debes aceptar la política de privacidad</span>
                     </div>
                 </div>
 
-                <div class="form-actions">
-                    <button type="submit" class="submit-btn" [disabled]="isLoading">
-                        <span *ngIf="!isLoading">Enviar mensaje</span>
-                        <span *ngIf="isLoading">Enviando...</span>
-                    </button>
-                </div>
+                <button type="submit" class="submit-btn" [disabled]="isLoading">
+                    {{ isLoading ? 'Enviando...' : 'Enviar mensaje' }}
+                </button>
             </form>
         </div>
     </div>

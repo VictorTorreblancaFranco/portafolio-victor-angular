@@ -1,13 +1,12 @@
+// contact.component.ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -16,16 +15,13 @@ export class ContactComponent {
   submitted = false;
   isLoading = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private http: HttpClient
-  ) {
+  constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
+      name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', [Validators.required, Validators.minLength(5)]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
-      privacyPolicy: [false, Validators.requiredTrue]
+      subject: ['', [Validators.required]],
+      message: ['', [Validators.required]],
+      privacyPolicy: [false, [Validators.requiredTrue]]
     });
   }
 
@@ -37,62 +33,24 @@ export class ContactComponent {
     this.submitted = true;
 
     if (this.contactForm.invalid) {
-      this.showErrorAlert('Por favor completa todos los campos requeridos correctamente');
+      console.log('Formulario inválido', this.contactForm.errors);
       return;
     }
 
     this.isLoading = true;
+    console.log('Formulario enviado:', this.contactForm.value);
 
-    // Simulación de envío (reemplaza con tu API real)
+    // Simulación de envío
     setTimeout(() => {
       this.isLoading = false;
-      this.showSuccessAlert();
+      alert('Mensaje enviado con éxito!\n\n' +
+        `Nombre: ${this.contactForm.value.name}\n` +
+        `Email: ${this.contactForm.value.email}\n` +
+        `Asunto: ${this.contactForm.value.subject}\n` +
+        `Mensaje: ${this.contactForm.value.message}`);
+
       this.contactForm.reset();
       this.submitted = false;
     }, 1500);
-
-    // Para implementación real con API:
-    /*
-    this.http.post('tu-api-endpoint', this.contactForm.value)
-      .subscribe({
-        next: () => {
-          this.isLoading = false;
-          this.showSuccessAlert();
-          this.contactForm.reset();
-          this.submitted = false;
-        },
-        error: (error) => {
-          this.isLoading = false;
-          this.showErrorAlert('Error al enviar el mensaje. Por favor intenta nuevamente.');
-          console.error('Error:', error);
-        }
-      });
-    */
-  }
-
-  private showSuccessAlert() {
-    Swal.fire({
-      title: '¡Mensaje enviado!',
-      text: 'Gracias por contactarme. Te responderé lo antes posible.',
-      icon: 'success',
-      confirmButtonText: 'Aceptar',
-      confirmButtonColor: '#3498db',
-      customClass: {
-        popup: 'sweet-alert-popup'
-      }
-    });
-  }
-
-  private showErrorAlert(message: string) {
-    Swal.fire({
-      title: 'Error',
-      text: message,
-      icon: 'error',
-      confirmButtonText: 'Entendido',
-      confirmButtonColor: '#e74c3c',
-      customClass: {
-        popup: 'sweet-alert-popup'
-      }
-    });
   }
 }

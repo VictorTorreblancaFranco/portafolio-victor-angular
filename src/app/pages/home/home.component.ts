@@ -5,6 +5,7 @@ import { FooterComponent } from '../../layout/footer/footer.component';
 import { ProjectCarouselComponent } from '../project-carousel/project-carousel.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ContactComponent } from '../contact/contact.component'; // Nueva importación
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { ContactComponent } from '../contact/contact.component'; // Nueva import
     CommonModule,
     ProjectCarouselComponent,
     SkillsComponent,
+    ReactiveFormsModule, 
     ContactComponent // Agregado aquí
   ]
 })
