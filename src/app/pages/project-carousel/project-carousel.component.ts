@@ -2,7 +2,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-project-carousel',
-  standalone: true,
   templateUrl: './project-carousel.component.html',
   styleUrls: ['./project-carousel.component.scss']
 })

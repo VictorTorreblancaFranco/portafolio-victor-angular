@@ -33,48 +33,48 @@
         <button [class.active]="i === currentIndex" (click)="goToProject(i)"></button>
         }
     </div>
+</div>
 
-    <!-- Modal Compacto -->
-    @if (showModal) {
-    <div class="project-modal" [class.active]="showModal">
-        <div class="modal-content">
-            <button class="close-modal" (click)="closeProjectModal()">
-                <i class="bi bi-x-lg"></i>
-            </button>
+<!-- Modal Centrado en Pantalla -->
+@if (showModal) {
+<div class="project-modal-overlay" (click)="closeProjectModal()">
+    <div class="project-modal-content" (click)="$event.stopPropagation()">
+        <button class="close-modal" (click)="closeProjectModal()">
+            <i class="bi bi-x-lg"></i>
+        </button>
 
-            <div class="modal-header">
-                <h3>{{ activeProject.title }}</h3>
-                <div class="modal-image" [style.backgroundImage]="'url(' + activeProject.image + ')'"></div>
+        <div class="modal-header">
+            <h3>{{ activeProject.title }}</h3>
+            <div class="modal-image" [style.backgroundImage]="'url(' + activeProject.image + ')'"></div>
+        </div>
+
+        <div class="modal-body">
+            <p class="description">{{ activeProject.description }}</p>
+
+            <div class="tech-tags">
+                @for (tech of activeProject.technologies; track tech) {
+                <span class="tag">{{ tech }}</span>
+                }
             </div>
 
-            <div class="modal-body">
-                <p class="description">{{ activeProject.description }}</p>
-
-                <div class="tech-tags">
-                    @for (tech of activeProject.technologies; track tech) {
-                    <span class="tag">{{ tech }}</span>
-                    }
-                </div>
-
-                <div class="project-links">
-                    @if (activeProject.link) {
-                    <a [href]="activeProject.link" target="_blank" class="btn link">
-                        <i class="bi bi-globe"></i> Ver Demo
-                    </a>
-                    }
-                    @if (activeProject.figma) {
-                    <a [href]="activeProject.figma" target="_blank" class="btn figma">
-                        <i class="bi bi-palette-fill"></i> Figma
-                    </a>
-                    }
-                    @if (activeProject.github) {
-                    <a [href]="activeProject.github" target="_blank" class="btn github">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
-                    }
-                </div>
+            <div class="project-links">
+                @if (activeProject.link) {
+                <a [href]="activeProject.link" target="_blank" class="btn link">
+                    <i class="bi bi-globe"></i> Ver Demo
+                </a>
+                }
+                @if (activeProject.figma) {
+                <a [href]="activeProject.figma" target="_blank" class="btn figma">
+                    <i class="bi bi-palette-fill"></i> Figma
+                </a>
+                }
+                @if (activeProject.github) {
+                <a [href]="activeProject.github" target="_blank" class="btn github">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                }
             </div>
         </div>
     </div>
-    }
 </div>
+}
