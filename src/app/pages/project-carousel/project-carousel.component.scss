@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .project-carousel {
     position: relative;
     width: 100%;
@@ -291,7 +293,7 @@
                     color: white;
 
                     &:hover {
-                        background: darken(#3c96dc, 10%);
+                        background: adjust-color(#3c96dc, $lightness: -10%);
                         transform: translateY(-2px);
                     }
                 }
@@ -301,7 +303,7 @@
                     color: white;
 
                     &:hover {
-                        background: darken(#a259ff, 10%);
+                        background: color.scale(#a259ff, $lightness: -10%);
                         transform: translateY(-2px);
                     }
                 }
