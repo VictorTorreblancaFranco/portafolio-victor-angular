@@ -295,7 +295,7 @@
                     font-size: 0.9rem;
 
                     &.expert {
-                        background: adjust-color(#3c96dc, $lightness: -10%);
+                        background: color.adjust(#3c96dc, $lightness: -10%);
                         color: var(--expert);
                     }
 
@@ -305,7 +305,7 @@
                     }
 
                     &.intermediate {
-                        background: adjust-color(#a259ff, $lightness: -10%);
+                        background: color.adjust(#a259ff, $lightness: -10%);
                         color: var(--intermediate);
                     }
 
@@ -364,7 +364,7 @@
                     color: white;
 
                     &:hover {
-                        background: adjust-color(#3c96dc, $lightness: -10%);
+                        background: color.adjust(#3c96dc, $lightness: -10%);
                         transform: translateY(-2px);
                     }
                 }
